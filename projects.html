@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>IIIT Allahabad</title>
+<link rel="stylesheet" href="css/style1.css"/>
+<!--fav-icon-->
+<link rel="shortcut icon" href="images/favicon.png"/>
+<style>
+    /* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    width: 400px;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+  
+}
+</style>
+</head>
+
+<body>
+    
+    <section class="main">
+
+      <!-- style="background-image: url(https://media.istockphoto.com/id/1385970223/photo/great-idea-of-a-marketing-strategy-plan-at-a-creative-office.jpg?b=1&s=170667a&w=0&k=20&c=tb2d0EOX_j10LHI_1znMGoSI_55FBSwP-Mo68GMzgfY=);" -->
+        
+        <nav class="navbar1">
+           
+              <div class="logo"><img src="images/logo.gif" style="max-width:10%;hieght:10px "/></div>
+            <input class="menu-btn" type="checkbox" id="menu-btn"/>
+            <label class="menu-icon" for="menu-btn">
+                <span class="nav-icon"></span>
+            </label>
+            <!-- <div class="navbar1"></div> -->
+            <ul class="menu" style="border-radius: 5px;">
+                <li><a href="index.html" class="navi">About</a></li>               
+                <li><a href="faculty.html" class="navi"> Faculty</a></li>
+                <li><a href="researchers.html" class="navi"> Researchers</a></li>
+                <li><a href="projects.html" class="navi">Projects</a></li>
+                <li><a href="publications.html" class="navi">Publications</a></li>
+                <li><a href="resources.html" class="navi">Resources</a></li>
+                <li><a href="contacts.html" class="navi">Contact</a></li>
+                <li><a class="active" onclick="document.getElementById('id01').style.display='block'" style="width:auto; border-radius: 5px; cursor: pointer;">Login</a></li>
+            </ul>
+        </nav>
+        
+
+       
+        <!-- login modal start -->
+        <div id="id01" class="modal">
+  
+            <form class="modal-content animate" action="/action_page.php" method="post" style="
+            width: 400px;
+        ">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <p style="font-size: 22px;">Student Login </p>
+                <hr>
+              </div>
+          
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+          
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                  
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+          
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw"><a href="#">Register Here</a></span>
+                <span class="psw" style="margin-right: 11px;"><a href="#">Forgot password?</a></span>
+              </div>
+            </form>
+          </div>
+        <!-- login modal end -->
+
+
+        <!--main-content-->
+        <!--div class="home-content"-->
+
+
+       
+            <!--div class="row" style="padding:20px;margin:20px;"-->
+                <!--div class="col-sm-12;"-->
+               
+                        <div class="card">
+                            
+                           
+                                
+                            <div class="contentText" style="text-align: justify;text-justify: inter-word;">   
+                            <p><h2 class="pro">PROJECTS</h2><br></p>
+                                    <ol><p> <b> <u> Ph. D. </u></b> </p><ul> <li> Sayantan Nath
+                                        <b>(Fire Protection in Coal Mine through Image Processing)</b> (Awarded-2017) Co-Supervisor Prof. G. N. Pandey. </li>
+
+                                        <li>Divya <b> (Twin Support Vector Machine-Multi Class extension and applications)</b> (submitted)</li>
+
+                                        <li> Vimal Updhyay <b>(Development of remotely operable automated device for thickness measurement and monitoring of overhead pipes)</b></li>
+
+                                        <li>Bakshi Rohit Prasad <b>(Machine Learning for Big Data Analytics)</b></li>
+
+                                         </ul>
+
+
+<br>
+
+  <hr>
+
+
+                                        <br><p> <b> <u>M. Tech.  Final Year</u></b></p><ul>
+
+                                        <li><div class="contentText"> Anant Prabhat<b>(Implementing Testing approaches for Complex Event Processing (CFP)) </b></div></li>
+
+                                        <li><div class="contentText"> Dibya jyoti Mahuri<b>(Cloud based mutation testing for distributed system)</b></div></li>
+
+                                        <li><div class="contentText"> Dhirendra Siddhartha <b>(Root Cause Analysis of Software failure using Log Mining)</b></div></li>
+
+                                        </ul>
+
+
+
+
+
+
+                                        <br>
+
+                                        <hr>
+                                      
+
+
+
+
+                                        <br>
+
+                                        </ul>
+
+
+
+                                        <br></p><p> <b> <u>M. Tech.  Students (2016)</u></b></p><ul>
+
+                                        <li><div class="contentText"> Neha Garg <b>(Process Mining for Clinical Workflow)</b> </div></li>
+
+                                        <li><div class="contentText"> Suchi Maheshwari  <b>(Two-stage software defect prediction using three-way decisions)</b></div></li>
+
+                                        <li><div class="contentText"> Ravindra Soni  <b>(Exploring web application testing techniques)</b></div></li>
+
+                                        <li><div class="contentText"> Rakesh Kumar Pal <b> (Test Case Minimization using Genetic Algorithm)</b></div></li>
+
+                                        <li><div class="contentText"> Unmesh  Kishore Bendale <b> (Distributed feature selection for big data)</b></div></li>
+
+                                         </ul>
+
+
+                                         <br>
+
+                                         <hr>
+                                       
+
+                                        <br>
+
+                                        <p> <b> <u>M. Tech. Students (2015)</u></b></p><ul>
+
+                                        <li><div class="contentText"> Shwet Ketu  <b> (A MapReduce Based Advanced Distributed K-means Clustering for Handling Big Data)</b> </div></li>
+
+                                        <li><div class="contentText"> Geetanjali Chaurasia  <b>(Clustering based Novel Test Case Prioritization Approach for Regression Testing</b>)</div></li>
+
+                                        <li><div class="contentText"> Anushree Priyadarshini  <b> (A MapReduce based Support Vector Machine for Big Data Classification)</b></div></li>
+
+                                        <li><div class="contentText"> Anubha Sharma  <b>(A Comparative model of classifier for Authorship Characterization)</b></div></li>
+
+                                        <li><div class="contentText"> Harshal Singh  <b> (Link Prediction for Co-Authorship in Heterogeneous Network using Stream Classification</b>)</div></li>
+
+                                        <li><div class="contentText"> Preetam Jayaswal  <b>(Churn prediction using Tree ensembles)</b></div></li>
+
+                                        </ul>
+
+
+
+
+                                        <br>
+
+                                        <hr>
+                                      
+
+
+
+                                        <br><p> <b> <u>M. Tech. Students (2014)</u></b></p><ul>
+
+
+
+                                        <li><div class="contentText"> Manoj Kumar <b>(A Clinical Decision Support System for Heart Disease-  A Hybrid Approach Using Fuzzy Method and Neural Network)</b> </div></li>
+
+                                        <li><div class="contentText"> Manish Shukla <b>(Hybrid Approach for Tuberculosis Data Classification Using Optimal Centroid Selection Based Clustering)</b></div></li>
+
+                                        <li><div class="contentText"> Pradeep Saini<b> (Using Clustering coherent rule generation for healthcare data)</b></div></li>
+
+                                        <li><div class="contentText"> Jitendra<b> (Effective detection of Parkinson’s disease using fuzzy k-nearest neighbor approach)</b></div></li>
+
+                                        <li><div class="contentText"> Anvita Srivastava<b> (Privacy Preserving Data Mining In Electronic Health Record Using K- Anonymity)</b></div></li>
+
+                                        </ul>
+
+                                        
+<br>
+
+<hr>
+
+
+                                        <br>
+
+                                        <p> <b> <u>M. Tech Students (2013)</u></b>
+
+
+
+                                         </p><ul><li> <div class="contentText"><b> Shubham Khanna (Study the application of data mining through establishing the pattern of Diabetes disease using SGPGI data)</b></div></li>
+
+                                        <li><div class="contentText"> Akhilesh Yadav<b> (Study the application of data mining through establishing the pattern of Lung cancer disease using SGPGI data)</b> </div></li-->
+
+                                        </li><li><div class="contentText"> Vijesh Patel <b>(Study the application of data mining through establishing the pattern of Heart Disease using SGPGI data)</b></div></li>
+
+                                        <li><div class="contentText"> Neha Rathore <b>(Study the application of data mining by establishing the pattern of Breast Cancer Disease and survivability prediction)</b>.</div></li> </ul>
+
+                                        <br>
+
+
+
+                                        <br>
+
+                                        <hr>
+                                      
+                                        <p> <b> <u>M. Tech Students (2012)</u></b>
+
+
+
+                                        </p><ul>
+
+                                        <li><div class="contentText"> Vishal Mandpe  <b>(Mining Software Repositories for Dynamic Fault Prediction)</b></div></li>
+
+                                        <li><div class="contentText"> Abhinav Lokhande <b>(Mining Software Repositories for Software Change Classification)</b></div></li>
+
+                                        </ul>
+
+
+                                        <br>
+
+                                        <hr>
+                                      
+
+                                        <br>
+
+                                        <p> <b> <u>M. Tech Students (2011)</u></b>
+
+                                        </p><ul>
+
+                                        <li><div class="contentText"> Divya <b>(Support Vector Classification and Regression for Health Data Mining</b>)</div></li>
+
+                                        <li><div class="contentText"> Ruchi Arya<b> (A fuzzy Clustering approach using multi kernel approach)</b></div></li>
+
+                                        <li><div class="contentText"> Santosh Kumar<b> (SVM Based Data Classification using Multi Kernel approach)</b></div></li>
+
+                                        </ul>
+
+
+
+                                        <br>
+
+                                        <hr>
+                                      
+                                        <br>
+
+                                        <p> <b> <u>M. Tech Students (2010)</u></b>
+
+                                        </p><ul>
+
+                                        <li><div class="contentText"> Sadhna Tiwari <b> (Classification of Datasets using SVM)</b></div></li>
+
+
+
+                                        </ul></ol>
+
+
+                                </div>    
+                            </div>
+                        
+                        
+        <!--/div--> 
+            
+            
+            <!--/div-->
+           
+    </section>
+    
+    
+    
+    <!--footer------------->
+    <footer>
+        <p>Copyright (C) - 2023 | Developed By IIIT Allahabad </p>
+        <p>© 2017 SERL - Software Engineering Research Lab</p>
+    </footer>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+</body>
+
+</html>
