@@ -155,23 +155,17 @@
         <label class="menu-icon" for="menu-btn">
           <span class="nav-icon"></span>
         </label>
-        <ul class="menu" style="border-radius: 5px">
-          <li><a href="index.html" class="navi">About</a></li>
-          <li><a href="faculty.html" class="navi"> Faculty</a></li>
-          <li><a href="researchers.html" class="navi"> Researchers</a></li>
-          <li><a href="projects.html" class="navi">Projects</a></li>
-          <li><a href="publications.php" class="navi">Publications</a></li>
-          <li><a href="resources.php" class="navi">Resources</a></li>
-          <li><a href="contact.html" class="navi">Contact</a></li>
-          <li>
-            <a
-              class="active"
-              style="width: auto; border-radius: 5px; cursor: pointer"
-              href="backend/index.html"
-              >Login</a
-            >
-          </li>
-        </ul>
+        
+<ul class="menu" style="border-radius: 5px;">
+              <li><a href="index.html" class="navi">Home</a></li>               
+              <li><a href="faculty.php" class="navi"> Faculty</a></li>
+              <li><a href="researchers.php" class="navi"> Researchers</a></li>
+              <li><a href="projects.html" class="navi">Projects</a></li>
+              <li><a href="publications.php" class="navi">Publications</a></li>
+              <li><a href="resources.php" class="navi">Resources</a></li>
+              <li><a href="contact.html" class="navi">Contact</a></li>
+                <li><a class="active"  style="width:auto; border-radius: 5px; cursor: pointer;" href="backend/index.html">Login</a></li>
+            </ul>
       </nav>
 
       <!--main-content-->

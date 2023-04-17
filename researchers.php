@@ -148,53 +148,20 @@ span.psw {
             <label class="menu-icon" for="menu-btn">
                 <span class="nav-icon"></span>
             </label>
-            <ul class="menu" style="border-radius: 5px;">
-              <li><a href="index.html" class="navi">About</a></li>               
-              <li><a href="faculty.html" class="navi"> Faculty</a></li>
-              <li><a href="researchers.html" class="navi"> Researchers</a></li>
+            
+
+<ul class="menu" style="border-radius: 5px;">
+              <li><a href="index.html" class="navi">Home</a></li>               
+              <li><a href="faculty.php" class="navi"> Faculty</a></li>
+              <li><a href="researchers.php" class="navi"> Researchers</a></li>
               <li><a href="projects.html" class="navi">Projects</a></li>
-              <li><a href="publications.html" class="navi">Publications</a></li>
-              <li><a href="resources.html" class="navi">Resources</a></li>
+              <li><a href="publications.php" class="navi">Publications</a></li>
+              <li><a href="resources.php" class="navi">Resources</a></li>
               <li><a href="contact.html" class="navi">Contact</a></li>
-                <li><a class="active" onclick="document.getElementById('id01').style.display='block'" style="width:auto; border-radius: 5px; cursor: pointer;">Login</a></li>
+                <li><a class="active"  style="width:auto; border-radius: 5px; cursor: pointer;" href="backend/index.html">Login</a></li>
             </ul>
         </nav>
        
-        <!-- login modal start -->
-        <!-- <div id="id01" class="modal">
-  
-            <form class="modal-content animate" action="/action_page.php" method="post" style="
-            width: 400px;
-        ">
-              <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <p style="font-size: 22px;">Student Login </p>
-                <hr>
-              </div>
-          
-              <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-          
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                  
-                <button type="submit">Login</button>
-                <label>
-                  <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-              </div>
-          
-              <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw"><a href="#">Register Here</a></span>
-                <span class="psw" style="margin-right: 11px;"><a href="#">Forgot password?</a></span>
-              </div>
-            </form>
-          </div> -->
-        <!-- login modal end -->
-
-
         <!--main-content-->
         <!--div class="home-content"-->
 
@@ -261,7 +228,57 @@ span.psw {
                                           
                             </div>
                         
-                          </div>
+
+
+
+<?php
+    $server = "localhost";
+    $user = "root";
+    $password = "_Mysqllocalsecured1.";
+    $database = "serl"; // Change 'database_name' to the name of your database
+    $conn = mysqli_connect($servername, $user, $password, $database);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT * FROM researcher";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row["name"];
+            $designation = $row["designation"];
+            $info = $row["info"];
+            $phone = $row["phone"];
+            $email = $row["email"];
+            $image = $row["image"];
+            $mentor = $row["mentor"];
+            echo '<div class="row">';
+            echo '<div class="card">';
+            echo '<div class="header"><br>';
+            echo '<h3 style="margin:0px;padding-bottom:15px;color: #f1f1f1;">'.$name.'</h3><p>'.$designation.'<br>';
+            echo '<b>Mentor:</b> '.$mentor.' <br><br> </p>';
+            echo '</div>';
+            echo '<p style="text-align: justify;text-justify: inter-word;">';
+            echo '<p><img src="'.$image.'" alt="'.$name.'" style="width:190px;height:200px;margin-bottom:20px;margin-right:15px;padding-left:10px;" align="left"/>';
+            echo $info;
+            echo '<br><br>';
+            echo '<h4>Contact Details</h4>';
+            echo '<b>Mobile Number :</b> '.$phone.'<br>';
+            echo '<b>Email ID :</b> '.$email.'<br>';
+            echo '</p>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo "No records found.";
+    }
+
+    mysqli_close($conn);
+    ?>
+
+          </div>
+
         <!--/div--> 
             
             

@@ -154,58 +154,19 @@
         <label class="menu-icon" for="menu-btn">
           <span class="nav-icon"></span>
         </label>
-        <ul class="menu" style="border-radius: 5px">
-          <li><a href="index.html" class="navi">About</a></li>
-          <li><a href="faculty.html" class="navi"> Faculty</a></li>
-          <li><a href="researchers.html" class="navi"> Researchers</a></li>
-          <li><a href="projects.html" class="navi">Projects</a></li>
-          <li><a href="publications.html" class="navi">Publications</a></li>
-          <li><a href="resources.php" class="navi">Resources</a></li>
-          <li><a href="contact.html" class="navi">Contact</a></li>
-          <li>
-            <a
-              class="active"
-              onclick="document.getElementById('id01').style.display='block'"
-              style="width: auto; border-radius: 5px; cursor: pointer"
-              >Login</a
-            >
-          </li>
-        </ul>
+        
+<ul class="menu" style="border-radius: 5px;">
+                <li><a href="index.html" class="navi">Home</a></li>               
+                <li><a href="faculty.php" class="navi"> Faculty</a></li>
+                <li><a href="researchers.php" class="navi"> Researchers</a></li>
+                <li><a href="projects.html" class="navi">Projects</a></li>
+                <li><a href="publications.php" class="navi">Publications</a></li>
+                <li><a href="resources.php" class="navi">Resources</a></li>
+                <li><a href="contact.html" class="navi">Contact</a></li>
+                <li><a class="active" style="width:auto; border-radius: 5px; cursor: pointer;" href="backend/index.html">Login</a></li>
+            </ul>
       </nav>
 
-      <!-- login modal start -->
-      <!-- <div id="id01" class="modal">
-  
-            <form class="modal-content animate" action="/action_page.php" method="post" style="
-            width: 400px;
-        ">
-              <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <p style="font-size: 22px;">Student Login </p>
-                <hr>
-              </div>
-          
-              <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-          
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                  
-                <button type="submit">Login</button>
-                <label>
-                  <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-              </div>
-          
-              <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw"><a href="#">Register Here</a></span>
-                <span class="psw" style="margin-right: 11px;"><a href="#">Forgot password?</a></span>
-              </div>
-            </form>
-          </div> -->
-      <!-- login modal end -->
 
       <!--main-content-->
       <!--div class="home-content"-->
@@ -827,6 +788,50 @@
                   https://sites.google.com/site/journalofcomputing.
                 </div>
               </li>
+<br/>
+<br/>
+
+<?php
+
+    $server = "localhost";
+    $user = "root";
+    $password = "_Mysqllocalsecured1.";
+    $database = "serl"; // Change 'database_name' to the name of your database
+        $con = mysqli_connect($server, $user, $password, $database);
+        if (!$con) {
+            die("Connection to the database failed due to: " . mysqli_connect_error());
+        }
+
+        $sql = "SELECT * FROM research_papers";
+        $query = mysqli_query($con, $sql);
+
+        if (mysqli_num_rows($query) > 0) {
+          while ($row = mysqli_fetch_assoc($query)) {
+
+                echo "<li>";
+                echo "<div class='contentText'>";
+              $names = $row["names"];
+              $mentor = $row["mentor"];
+                $link  = $row["link"];
+                $title = $row["title"];
+                $content = $row["content"];
+
+                echo $names;
+                echo "<b>, $mentor </b>";
+                echo '"';
+                echo "<b><a href ='$link' target='_blank'>$title</a></b>";
+                echo '"';
+                echo ", $content<br/>";
+                echo "</br>";
+                echo "</li>";
+            }
+        } else {
+            echo "No records found.";
+        }
+        mysqli_close($con);
+    ?>
+</div>
+  
             </ol>
 
             <br /><font size="+2"
@@ -1525,6 +1530,48 @@
 
               <br />
 
+              <?php
+
+    $server = "localhost";
+    $user = "root";
+    $password = "_Mysqllocalsecured1.";
+    $database = "serl"; // Change 'database_name' to the name of your database
+        $con = mysqli_connect($server, $user, $password, $database);
+        if (!$con) {
+            die("Connection to the database failed due to: " . mysqli_connect_error());
+        }
+
+        $sql = "SELECT * FROM research_papers";
+        $query = mysqli_query($con, $sql);
+
+        if (mysqli_num_rows($query) > 0) {
+          while ($row = mysqli_fetch_assoc($query)) {
+
+                echo "<li>";
+                echo "<div class='contentText'>";
+              $names = $row["names"];
+              $mentor = $row["mentor"];
+                $link  = $row["link"];
+                $title = $row["title"];
+                $content = $row["content"];
+
+                echo $names;
+                echo "<b>, $mentor </b>";
+                echo '"';
+                echo "<b><a href ='$link' target='_blank'>$title</a></b>";
+                echo '"';
+                echo ", $content<br/>";
+                echo "</br>";
+                echo "</li>";
+            }
+        } else {
+            echo "No records found.";
+        }
+        mysqli_close($con);
+    ?>
+</div>
+
+
               <br /><font size="+2"
                 ><i>&nbsp;&nbsp;<b> Details of National Workshops</b></i></font
               ><br /><br />
@@ -1620,6 +1667,52 @@
                     Information Technology, Amethi.
                   </div>
                 </li>
+
+<br /><br />
+
+                <li>
+                  <div class="contentText">
+                    Dr. Sonali Agarwal,
+                    <b>"Pervasive Telemedicine System with Data Mining,"</b>,
+                    presented in National Seminar cum Workshop for Rural
+                    Empowerment, April 15-16, 2012, Rajiv Gandhi Institute of
+                    Information Technology, Amethi.
+                  </div>
+                </li>
+
+<?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "_Mysqllocalsecured1";
+        $dbname = "serl"; // Change 'database_name' to the name of your database
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        $sql = "SELECT * FROM national_workshops";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $authors = $row["authors"];
+                $title = $row["title"];
+                $event = $row["event"];
+                $date = $row["date"];
+                $location = $row["location"];
+
+                echo '<li>';
+                echo '<div class="contentText">'.$authors.', <b>'.$title.'</b>, presented at '.$event.', '.$location.' ('.$date.').</div>';
+                echo '</li>';
+            }
+        } else {
+            echo "No records found.";
+        }
+        echo "<br/>";
+        echo "<br/>";
+        mysqli_close($conn);
+        ?>
+
               </ol>
             </ol>
           </div>
